@@ -30,13 +30,28 @@ Data yang digunakan mencakup harga pembukaan, tertinggi, terendah, penutupan, vo
 ### 5. Forecasting
 - Data dibagi menjadi training (80%) dan testing (20%).
 - Prediksi dilakukan pada data testing menggunakan model ARIMA(1,1,1).
-- Hasil prediksi dibandingkan dengan data aktual.
-- Visualisasi hasil menggunakan matplotlib.
+- Transformasi prediksi ke skala asli menggunakan differencing invers.
+- Visualisasi hasil prediksi dibandingkan dengan data aktual.
 
-## Hasil
-- Model ARIMA(1,1,1) menangkap tren jangka pendek dengan baik.
-- Model auto_arima memilih ARIMA(5,1,0) berdasarkan AIC, memberikan model lebih kompleks.
-- Plot aktual vs prediksi menunjukkan pergerakan harga saham TLKM.
+## Hasil Forecast
+Berikut cuplikan hasil prediksi harga penutupan saham TLKM dibandingkan data aktual:
+
+| Date       | Aktual  | Prediksi     |
+|------------|--------:|-------------:|
+| 2023-08-18 | 3760.0  | NaN          |
+| 2023-08-21 | 3740.0  | 3763.43      |
+| 2023-08-22 | 3750.0  | 3740.82      |
+| 2023-08-23 | 3740.0  | 3749.29      |
+| 2023-08-24 | 3720.0  | 3740.31      |
+| ...        | ...     | ...          |
+| 2024-07-19 | 3140.0  | 3211.39      |
+| 2024-07-22 | 3100.0  | 3142.87      |
+| 2024-07-23 | 3160.0  | 3101.28      |
+| 2024-07-24 | 3060.0  | 3156.18      |
+| 2024-07-25 | 3090.0  | 3064.34      |
+
+- Plot visualisasi aktual vs prediksi dapat ditambahkan di bawah ini:  
+  ![Plot Prediksi](images/Prediksi Saham TLKM ARIMA.jpeg) 
 
 ## Library yang Digunakan
 - `yfinance` → untuk download data saham.
@@ -44,3 +59,8 @@ Data yang digunakan mencakup harga pembukaan, tertinggi, terendah, penutupan, vo
 - `matplotlib` → visualisasi.
 - `statsmodels` → fitting model ARIMA.
 - `pmdarima` → auto_arima.
+
+## Kesimpulan
+- Model ARIMA(1,1,1) mampu menangkap tren jangka pendek harga saham TLKM dengan cukup baik.
+- Model auto_arima (ARIMA 5,1,0) memberikan model lebih kompleks berdasarkan AIC.
+- Visualisasi prediksi menunjukkan bahwa model sederhana bisa mendekati pola pergerakan aktual, meskipun beberapa deviasi terjadi pada fluktuasi tajam.
