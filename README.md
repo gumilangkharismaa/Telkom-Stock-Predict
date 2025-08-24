@@ -50,7 +50,7 @@ Berikut cuplikan hasil prediksi harga penutupan saham TLKM dibandingkan data akt
 | 2024-07-24 | 3060.0  | 3156.18      |
 | 2024-07-25 | 3090.0  | 3064.34      |
 
-- Plot visualisasi aktual vs prediksi dapat ditambahkan di bawah ini:  
+- Plot visualisasi aktual vs prediksi 
   ![Plot Prediksi](Prediksi Saham TLKM ARIMA.jpeg)
 
 ## Library yang Digunakan
